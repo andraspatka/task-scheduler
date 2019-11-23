@@ -7,4 +7,4 @@ The program will write the output for these scheduling tasks to stdout, one afte
 
 Detailed documentation can be found [here](https://github.com/andraspatka/task-scheduler/blob/master/docs/Documentation%20%5BEN%5D.pdf)
 
-The documentation is also available in Hungarian [here](https://github.com/andraspatka/task-scheduler/blob/master/Documentation/Documentation%20%5BHU%5D.pdf)
+The documentation is also available in Hungarian [here](https://github.com/andraspatka/task-scheduler/blob/master/docs/Documentation%20%5BHU%5D.pdf)

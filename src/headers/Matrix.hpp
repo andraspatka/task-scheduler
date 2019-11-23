@@ -3,38 +3,42 @@
 
 #include <iostream>
 
-///Created by Patka Zsolt-András
-
 /**
  * Generic Matrix data structure.
  * Represented in the memory as a one dimensional array
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-
 template <typename T>
-class Matrix{
+class Matrix
+{
 private:
     size_t sizeX;
     size_t sizeY;
-    T * data;
+    T *data;
+
 public:
     /**
      * Constructor.
      * @param x: number of rows
      * @param y: number of columns
      */
-    Matrix(size_t sizeX, size_t sizeY): sizeX(sizeX),sizeY(sizeY){
-        data = new T[sizeX*sizeY];
+    Matrix(size_t sizeX, size_t sizeY) : sizeX(sizeX), sizeY(sizeY)
+    {
+        data = new T[sizeX * sizeY];
     }
     /**
      * Copy constructor.
      * @param rhv: right hand value
      */
-    Matrix(const Matrix& rhv){
-        sizeX=rhv.getX();
-        sizeY=rhv.getY();
+    Matrix(const Matrix &rhv)
+    {
+        sizeX = rhv.getX();
+        sizeY = rhv.getY();
         data = new T[sizeX * sizeY];
-        for(size_t i=0; i<sizeX*sizeY;++i){
-            data[i]=rhv[i];
+        for (size_t i = 0; i < sizeX * sizeY; ++i)
+        {
+            data[i] = rhv[i];
         }
     }
     /**
@@ -45,10 +49,12 @@ public:
      * @return a reference to the element
      * @throws const char* exception in case of an incorrect index
      */
-    T& getElement(size_t x, size_t y){
-        if( (x<sizeX)&&(y<sizeY) )
+    T &getElement(size_t x, size_t y)
+    {
+        if ((x < sizeX) && (y < sizeY))
             return data[x * sizeY + y];
-        else{
+        else
+        {
             throw "Incorrect index";
         }
     }
@@ -58,9 +64,11 @@ public:
      * Only use if storing 0 in your type doesn't result in undefined behaviour
      * @return the number of rows
      */
-    void nullify(){
-        for(size_t i=0;i<sizeX*sizeY;++i){
-            data[i]=0;
+    void nullify()
+    {
+        for (size_t i = 0; i < sizeX * sizeY; ++i)
+        {
+            data[i] = 0;
         }
     }
     /**
@@ -70,26 +78,33 @@ public:
      * @return reference to the given element
      * @throws const char * exception in the case of an incorrect index
      */
-    T& operator[](size_t index)const{
-        if((index >= 0) && (index < sizeX * sizeY)){
+    T &operator[](size_t index) const
+    {
+        if ((index >= 0) && (index < sizeX * sizeY))
+        {
             return data[index];
-        }else throw "Incorrect index";
+        }
+        else
+            throw "Incorrect index";
     }
 
     /**
      * @return the number of rows
      */
-    size_t getX() const{
+    size_t getX() const
+    {
         return sizeX;
     }
     /**
      * @return the number of columns
      */
-    size_t getY() const{
+    size_t getY() const
+    {
         return sizeY;
     }
-    ~Matrix(){
-        delete []data;
+    ~Matrix()
+    {
+        delete[] data;
     }
 };
 

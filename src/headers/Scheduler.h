@@ -6,17 +6,18 @@
 #include "Matrix.hpp"
 #include "Array.hpp"
 
-///Created by Patka Zsolt-András
-
 /**
  * Scheduler
  * Schedules tasks which it receives from a Task array
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-class Scheduler{
+class Scheduler
+{
 protected:
     Array<Task> tasks;
-    Queue<Task> * queue; ///The queue used by the scheduling algorithms
-    Matrix<bool> * output; ///This stores the output of the scheduler. A matrix in array form
+    Queue<Task> *queue;   //The queue used by the scheduling algorithms
+    Matrix<bool> *output; //This stores the output of the scheduler. A matrix in array form
 public:
     static size_t TIMESTEPS;
     /**
@@ -37,14 +38,13 @@ public:
      * Schedule
      * Purely virtual function
      */
-    virtual void schedule()=0;
+    virtual void schedule() = 0;
 
-    virtual ~Scheduler(){
+    virtual ~Scheduler()
+    {
         delete queue;
         delete output;
     }
 };
-
-
 
 #endif // SCHEDULER_H_INCLUDED

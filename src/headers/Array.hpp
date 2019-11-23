@@ -4,12 +4,11 @@
 #include <algorithm>
 #include <iostream>
 
-///Created by Patka Zsolt-András
-
 /**
  * Generic dynamic Array class
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-
 template <typename T>
 class Array{
     T * data;
@@ -22,7 +21,7 @@ public:
     Array(size_t capacity=10):capacity(capacity){
         data = new T[capacity];
     }
-    ///Copy constructor
+    //Copy constructor
     Array(const Array& arr){
         capacity=arr.size();
         data = new T[capacity];

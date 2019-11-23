@@ -4,30 +4,30 @@
 #include "Display.hpp"
 #include "Scheduler.h"
 
-///Created by Patka Zsolt-András
-
 /**
  * Round Robin scheduler.
  * Class which implements the RR algorithm
  * Works with Array<Task> and Matrix<bool> types
  * The tasks are stored in an Array<Task> type collection
  * The output is stored in a Matrix<bool> type collection
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-
-
-class RR: public Scheduler, public Display{
+class RR : public Scheduler, public Display
+{
     const size_t TIMESLICE;
+
 public:
     /**
      * One parameter constructor
      * Sets the timeslice
      */
-    RR(size_t timeslice): TIMESLICE(timeslice){}
+    RR(size_t timeslice) : TIMESLICE(timeslice) {}
     /**
      * Two parameter constructor
      * Sets the timeslice and the tasks Array
      */
-    RR(size_t timeslice, Array<Task> tasks): Scheduler(tasks), TIMESLICE(timeslice){}
+    RR(size_t timeslice, Array<Task> tasks) : Scheduler(tasks), TIMESLICE(timeslice) {}
 
     /**
      * schedule
@@ -36,9 +36,7 @@ public:
      */
     void schedule();
 
-    ~RR(){
-    }
-
+    ~RR() {}
 };
 
 #endif // RR_H_INCLUDED

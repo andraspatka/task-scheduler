@@ -5,13 +5,12 @@
 #include <iostream>
 #include "Matrix.hpp"
 
-///Created by Patka Zsolt-András
-
 /**
  * Display class.
  * Can be changed to any class which implements the displayOutput function and can work with the output Matrix
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-
 using std::cout;
 
 class Display{

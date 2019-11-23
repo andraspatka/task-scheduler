@@ -2,47 +2,56 @@
 #define TASK_H_INCLUDED
 #include <stdlib.h>
 
-///Created by Patka Zsolt-András
-
 /**
  * Task class.
+ * 
+ * Created by Patka Zsolt-Andrï¿½s
  */
-
-class Task{
+class Task
+{
     unsigned int start;
     unsigned int cpu;
-    unsigned int nr; ///Identifier (used for the output matrix)
+    unsigned int nr; //Identifier (used for the output matrix)
 public:
-    static size_t MAXCPU;///Maximum value
-    static size_t MAXSTART;///Maximum value
+    static size_t MAXCPU;   //Maximum value
+    static size_t MAXSTART; //Maximum value
 
     /**
      * No parameter constructor
      */
-    Task(){}
+    Task() {}
+
     /**
      * Constructor
      * Sets the start and cpu values
      */
     Task(unsigned int start, unsigned int cpu);
-    unsigned int getStart() const{
+
+    unsigned int getStart() const
+    {
         return start;
     }
-    unsigned int getCpu()const{
+    unsigned int getCpu() const
+    {
         return cpu;
     }
-    unsigned int getNr() const{
+    unsigned int getNr() const
+    {
         return this->nr;
     }
-    void setNr(unsigned int nr){
-        this->nr=nr;
+    void setNr(unsigned int nr)
+    {
+        this->nr = nr;
     }
+
     /**
      * operator--
      * Decrements the cpu value by one;
      */
-    void operator--(){
-        if(cpu > 0){
+    void operator--()
+    {
+        if (cpu > 0)
+        {
             --cpu;
         }
     }
